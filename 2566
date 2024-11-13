@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+	int arr[9][9];
+	int Max = 0;
+	int x,y,tempx,tempy;
+	for (int j = 0; j < 9; j++){ 
+		for (int i = 0; i < 9; i++) {
+			scanf("%d ", &arr[j][i]);
+		}
+	}
+	for (x = 0; x < 9; x++) {
+		for (y = 0; y < 9; y++) {
+			if (Max <= arr[x][y]) {
+				Max = arr[x][y];
+				tempx = x+1;
+				tempy = y+1;
+			}
+		}
+	}
+	printf("%d\n", Max);
+	printf("%d %d", tempx, tempy);
+	return 0;
+}
