@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main(){
+    char subname[51];
+    char class[3];
+    float grade, num, Sum1, Sum2;
+    for (int i=0; i<20;i++){
+        scanf("%s %f %s",&subname,&grade,&class);
+        if (class[0]!='P' && class[0]!='F'){
+            if (class[0]=='A'){
+                num=4.0;
+            }
+            else if (class[0]=='B'){
+                num=3.0;
+            }
+            else if (class[0]=='C'){
+                num=2.0;
+            }
+            else {
+                num=1.0;
+            }
+            if (class[1]=='+'){
+                num=num+0.5;
+            }
+            Sum1=Sum1+(grade*num);
+            Sum2=Sum2+grade;
+        }
+        else {
+            if (class[0]=='F'){
+                Sum2=Sum2+grade;
+            }
+        }
+    }
+    printf("%f",(Sum1/Sum2));
+}
